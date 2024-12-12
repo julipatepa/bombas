@@ -1,0 +1,31 @@
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+  }
+  .footer {
+    background-color: #343a40;
+    color: rgb(92, 23, 23);
+    padding: 20px 0;
+  }
+  .footer a {
+    color: #dcdcdc;
+  }
+  .footer a:hover {
+    color: white;
+  }
+  /* Ajustes personalizados para mejorar la estética */
+.container {
+    max-width: 1200px;
+}
+h2 {
+    color: #343a40;
+    font-weight: bold;
+}
+p {
+    margin-bottom: 0;
+}
+.shadow-sm {
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.15);
+}
