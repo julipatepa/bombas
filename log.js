@@ -12,3 +12,11 @@ accordionItems.forEach(item => {
         mapImage.style.height = `${accordionHeight}px`;
     });
 });
+  
+  
+const observer = lozad('.lazyload', {
+    loaded: function(el) {
+        el.classList.add('loaded');
+    }
+});
+observer.observe();
