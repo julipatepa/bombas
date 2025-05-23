@@ -1,29 +1,37 @@
 <!doctype html>
+
 <html lang="es">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Tritech</title>
+    <title>JRM</title>
     <link rel="icon" href="imagenes/favicom.webp" type="image/x-icon">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="estilos.css"> 
-    <link rel="stylesheet" href="log.js">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11490450598"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'AW-11490450598');
-    </script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link rel="stylesheet" href="estilos.css"> 
+<link rel="stylesheet" href="log.js">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11490450598"></script>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-11490450598');
+
+
+</script>
+
 </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
-      <div class="container-fluid p-0"> <!-- El p-0 elimina el padding -->
-        <a class="navbar-brand" href="#">
-          <img src="imagenes/logo.jpg" alt="Logo" class="rounded-circle mx-3 lazy" style="width: 80px; height: 80px;">
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="imagenes/logo.jpg" alt="Logo" class="rounded-circle me-2" width="60" height="60">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -31,165 +39,47 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link btn mx-3 my-1" href="#footer"><i>Nosotros</i></a>
+              <a class="nav-link fw-semibold" href="#footer">
+                <i class="bi bi-info-circle text-success"></i> Nosotros
+              </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link btn mx-1 my-1" href="https://wa.me/1544752880"><i class="bi bi-whatsapp">Contactanos</i></a>
-            </li> 
+              <a class="nav-link fw-semibold" href="https://wa.me/1544752880" target="_blank">
+                <i class="bi bi-whatsapp text-success"></i> Contactanos
+              </a>
+            </li>
           </ul>
         </div>
       </div>
     </nav>
-    
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-        <!-- Primer Slide -->
-        <div class="carousel-item active">
-          <img class="d-block w-100" src="imagenes/imagencarru.jpg" alt="First slide">
-          <div class="position-absolute top-50 start-50 translate-middle text-center text-white w-100 p-3">
-            <div class="d-grid gap-2 d-sm-flex justify-content-center">
-              <a href="tel:+541144752880" class="btn btn-success btn-sm w-100 w-sm-auto mb-2 mb-sm-0">
-                <i class="bi bi-telephone"></i> Llamar al técnico
-              </a>
-              <a href="https://wa.me/1544752880" class="btn btn-primary btn-sm w-100 w-sm-auto">
-                <i class="bi bi-whatsapp"></i> Contactanos
-              </a>
-            </div>
-          </div>
-        </div>
-    
-        <!-- Segundo Slide -->
-        <div class="carousel-item">
-          <img class="d-block w-100" src="imagenes/carrusel2.jpeg" alt="Second slide">
-          <div class="position-absolute top-50 start-50 translate-middle text-center text-white w-100 p-3">
-            <div class="d-grid gap-2 d-sm-flex justify-content-center">
-              <a href="tel:+541144752880" class="btn btn-success btn-sm w-100 w-sm-auto mb-2 mb-sm-0">
-                <i class="bi bi-telephone"></i> Llamar al técnico
-              </a>
-              <a href="https://wa.me/1544752880" class="btn btn-primary btn-sm w-100 w-sm-auto">
-                <i class="bi bi-whatsapp"></i> Contactanos
-              </a>
-            </div>
-          </div>
-        </div>
-    
-        <!-- Tercer Slide -->
-        <div class="carousel-item">
-          <img class="d-block w-100" src="imagenes/carrusel2.jpeg" alt="Third slide">
-          <div class="position-absolute top-50 start-50 translate-middle text-center text-white w-100 p-3">
-            <div class="d-grid gap-2 d-sm-flex justify-content-center">
-              <a href="tel:+541144752880" class="btn btn-success btn-sm w-100 w-sm-auto mb-2 mb-sm-0">
-                <i class="bi bi-telephone"></i> Llamar al técnico
-              </a>
-              <a href="https://wa.me/1544752880" class="btn btn-primary btn-sm w-100 w-sm-auto">
-                <i class="bi bi-whatsapp"></i> Contactanos
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    
-      <!-- Controles del Carrusel -->
-      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-    
-    
-    
-    
-    
-  <div class="container-fluid">
-    <div class="row">
-      <!-- Primera tarjeta -->
-      <div class="col-md-4 d-flex align-items-stretch  mt-3">
-        <div class="card mt-3 w-100 h-100">
-          <img src="imagenes/card.webp" class="card-img-top" alt="..." style="height: 200px; object-fit: contain;">
-          <div class="card-body d-flex flex-column justify-content-between">
-            <h5 class="card-title text-center">Servicios</h5>
-            <p class="card-text text-center">Instalamos, mantenemos y reparamos bombas para garantizar su funcionamiento eficiente en diversos sistemas industriales y domésticos de agua.</p>
-            <a href="https://wa.me/1538479551" class="btn btn-primary bi bi-whatsapp">contactanos</a>
-          </div>
-        </div>
-      </div>
-  
-      <!-- Segunda tarjeta -->
-      <div class="col-md-4 d-flex align-items-stretch mt-3">
-        <div class="card mt-3 w-100 h-100">
-          <img src="imagenes/card2.webp" class="card-img-top" alt="..." style="height: 200px; object-fit: contain;">
-          <div class="card-body d-flex flex-column justify-content-between">
-            <h5 class="card-title text-center">Servicios</h5>
-            <p class="card-text text-center">Ofrecemos soluciones integrales en bombas para manejo de líquidos, asegurando su eficiencia con instalación, mantenimiento y reparación.</p>
-            <a href="https://wa.me/1538479551" class="btn btn-primary bi bi-whatsapp">contactanos</a>
-          </div>
-        </div>
-      </div>
-  
-      <!-- Tercera tarjeta -->
-      <div class="col-md-4 d-flex align-items-stretch mt-3">
-        <div class="card mt-3 w-100 h-100">
-          <img src="imagenes/card1.webp" class="card-img-top" alt="..." style="height: 200px; object-fit: contain;">
-          <div class="card-body d-flex flex-column justify-content-between">
-            <h5 class="card-title text-center">Servicios</h5>
-            <p class="card-text text-center">Proveemos servicios especializados en bombas para agua y líquidos, cubriendo desde instalación hasta reparación, optimizando su rendimiento.</p>
-            <a href="https://wa.me/1538479551" class="btn btn-primary bi bi-whatsapp">contactanos</a>
-          </div>
-        </div>
-      </div>
 
-      <div class="col-md-4 d-flex align-items-stretch mt-3">
-        <div class="card mt-3 w-100 h-100">
-          <img src="imagenes/imagencard.jpeg" class="card-img-top" alt="..." style="height: 200px; object-fit: contain;">
-          <div class="card-body d-flex flex-column justify-content-between">
-            <h5 class="card-title text-center">Servicios</h5>
-            <p class="card-text text-center">Brindamos instalación, mantenimiento y reparación de bombas para garantizar su óptimo funcionamiento y eficiencia, adaptándonos a las necesidades específicas de cada cliente y sector.</p>
-            <a href="https://wa.me/1538479551" class="btn btn-primary bi bi-whatsapp">contactanos</a>
-          </div>
-        </div>
-      </div>
+<div class="container-fluid p-0">
+  <img 
+    src="imagenes/imagencarru.jpg" 
+    class="img-fluid w-100" 
+    alt="Imagen principal">
+</div>
 
-      <div class="col-md-4 d-flex align-items-stretch mt-3">
-        <div class="card mt-3 w-100 h-100">
-          <img src="imagenes/bombas1.png" class="card-img-top" alt="..." style="height: 200px; object-fit: contain;">
-          <div class="card-body d-flex flex-column justify-content-between">
-            <h5 class="card-title text-center">Servicios</h5>
-            <p class="card-text text-center">Ofrecemos soluciones completas con instalación, mantenimiento y reparación de bombas, asegurando su rendimiento óptimo para el manejo eficiente de líquidos en diversos entornos.</p>
-            <a href="https://wa.me/1538479551" class="btn btn-primary bi bi-whatsapp">contactanos</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 d-flex align-items-stretch mt-3">
-        <div class="card mt-3 w-100 h-100">
-          <img src="imagenes/imagencard2.jpeg" class="card-img-top" alt="..." style="height: 200px; object-fit: contain;">
-          <div class="card-body d-flex flex-column justify-content-between">
-            <h5 class="card-title text-center">Servicios</h5>
-            <p class="card-text text-center">Nos enfocamos en la instalación, mantenimiento y reparación de sistemas de bombeo, asegurando su eficiencia operativa y prolongando la vida útil de cada equipo instalado.</p>
-            <a href="https://wa.me/1538479551" class="btn btn-primary bi bi-whatsapp">contactanos</a>
-          </div>
-        </div>
-      </div>
-      
-    </div>
-  </div>
+
+
+
 
   
-  
+  <div class="container mt-5">
+    <h2 class="text-center">¿Dónde estamos ubicados?</h2>
+    
   <iframe class="mt-5 container-fluid" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3279.529280526066!2d-58.38552562447053!3d-34.717050863492055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb5785be2c7a7%3A0xf2c94d4fcf5ff735!2sBombasYServicios!5e0!3m2!1ses!2sar!4v1734425553744!5m2!1ses!2sar" 
   width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
 <!-- Testimonios en diseño de tarjetas -->
+
 <div class="row mt-5">
   <div class="col-12">
       <div class="row row-cols-1 row-cols-lg-3 g-4">
           <!-- Testimonio 1 -->
           <div class="col col-lg-4 mb-4">
               <div class="card shadow-sm h-100">
-                  <img src="https://serviciosrowaadomicilio.com/wp-content/uploads/2024/02/Testimonio8.png" class="card-img-top img-responsive-custom" alt="">
+                <img src="https://serviciosrowaadomicilio.com/wp-content/uploads/2024/02/Testimonio8.png" class="card-img-top img-responsive-custom" alt="">
               </div>
           </div>
           <!-- Testimonio 2 -->
@@ -211,8 +101,8 @@
       <div class="row row-cols-1 row-cols-lg-3 g-4 mt-4">
           <!-- Testimonio 4 -->
           <div class="col col-lg-4 mb-4">
-              <div class="card shadow-sm h-100">
-                  <img src="https://serviciosrowaadomicilio.com/wp-content/uploads/2024/02/Testimonio6.png" class="card-img-top img-responsive-custom" alt="Testimonio 3 Servicio técnico de bombas presurizadoras y bombas elevadoras rowa">
+            <div class="card shadow-sm h-100">
+              <img src="https://serviciosrowaadomicilio.com/wp-content/uploads/2024/02/Testimonio6.png" class="card-img-top img-responsive-custom" alt="Testimonio 3 Servicio técnico de bombas presurizadoras y bombas elevadoras rowa">
               </div>
           </div>
           <!-- Testimonio 5 -->
@@ -223,148 +113,221 @@
           </div>
           <!-- Testimonio 6 -->
           <div class="col col-lg-4 mb-4">
-              <div class="card shadow-sm h-100">
+            <div class="card shadow-sm h-100">
                   <img src="https://serviciosrowaadomicilio.com/wp-content/uploads/2024/02/Testimonio7.png" class="card-img-top img-responsive-custom" alt="Testimonio 3 Servicio técnico de bombas presurizadoras y bombas elevadoras rowa">
+                </div>
               </div>
+            </div>
           </div>
+        </div>
+        <div class="container-fluid mt-5">
+  <div class="scrolling-wrapper">
+    
+    <!-- Tarjeta 1 -->
+    <div class="card">
+      <img src="imagenes/card.webp" class="card-img-top" alt="" style="height:200px; object-fit:contain;">
+      <div class="card-body d-flex flex-column justify-content-between">
+        <h5 class="cursiva-custom text-center">Servicios</h5>
+        <p class="card-text text-center">
+          Instalamos, mantenemos y reparamos bombas para garantizar su funcionamiento eficiente…
+        </p>
       </div>
+    </div>
+
+    <!-- Tarjeta 2 -->
+    <div class="card">
+      <img src="imagenes/card2.webp" class="card-img-top" alt="" style="height:200px; object-fit:contain;">
+      <div class="card-body d-flex flex-column justify-content-between">
+        <h5 class="cursiva-custom text-center">Servicios</h5>
+        <p class="card-text text-center">
+          Ofrecemos soluciones integrales en bombas para manejo de líquidos…
+        </p>
+      </div>
+    </div>
+
+    <!-- Tarjeta 3 -->
+    <div class="card">
+      <img src="imagenes/card1.webp" class="card-img-top" alt="" style="height:200px; object-fit:contain;">
+      <div class="card-body d-flex flex-column justify-content-between">
+        <h5 class="cursiva-custom text-center">Servicios</h5>
+        <p class="card-text text-center">
+          Proveemos servicios especializados en bombas para agua y líquidos…
+        </p>
+      </div>
+    </div>
+
+    <!-- Tarjeta 4 -->
+    <div class="card">
+      <img src="imagenes/imagencard.jpeg" class="card-img-top" alt="" style="height:200px; object-fit:contain;">
+      <div class="card-body d-flex flex-column justify-content-between">
+        <h5 class="cursiva-custom text-center">Servicios</h5>
+        <p class="card-text text-center">
+          Brindamos instalación, mantenimiento y reparación de bombas para garantizar su óptimo funcionamiento…
+        </p>
+      </div>
+    </div>
+
+    <!-- Tarjeta 5 -->
+    <div class="card">
+      <img src="imagenes/bombas1.png" class="card-img-top" alt="" style="height:200px; object-fit:contain;">
+      <div class="card-body d-flex flex-column justify-content-between">
+        <h5 class="cursiva-custom text-center">Servicios</h5>
+        <p class="card-text text-center">
+          Ofrecemos soluciones completas con instalación, mantenimiento y reparación de bombas…
+        </p>
+      </div>
+    </div>
+
+    <!-- Tarjeta 6 -->
+    <div class="card">
+      <img src="imagenes/imagencard2.jpeg" class="card-img-top" alt="" style="height:200px; object-fit:contain;">
+      <div class="card-body d-flex flex-column justify-content-between">
+        <h5 class="cursiva-custom text-center">Servicios</h5>
+        <p class="card-text text-center">
+          Nos enfocamos en la instalación, mantenimiento y reparación de sistemas de bombeo…
+        </p>
+      </div>
+    </div>
+
   </div>
 </div>
 
-              <div class="container mt-5">
-                <div class="row mt-5 d-flex align-items-stretch">
-                    <div class="col-12 col-md-8 d-flex justify-content-center align-items-stretch">
-                        <img src="imagenes/mapa.webp" alt="Mapa de ubicación" class="img-fluid shadow-sm rounded" style="width: 100%; height: 100%; max-height: 500px; object-fit: contain;">
-                    </div>
-            
-                    <div class="col-12 col-md-4 d-flex justify-content-center align-items-stretch mt-3 mt-md-0">
-                        <div class="accordion w-100 d-flex flex-column justify-content-center" id="accordionExample">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingNorth">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNorth" aria-expanded="false" aria-controls="collapseNorth">
-                                        Zona Norte
-                                    </button>
-                                </h2>
-                                <div id="collapseNorth" class="accordion-collapse collapse" aria-labelledby="headingNorth" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <ul class="list-group">
-                                            <li class="list-group-item">Tigre</li>
-                                            <li class="list-group-item">San Isidro</li>
-                                            <li class="list-group-item">San Fernando</li>
-                                            <li class="list-group-item">Vicente López</li>
-                                            <li class="list-group-item">Escobar</li>
-                                        </ul>
-                                    </div>
+        
+        <div class="container mt-5">
+          <div class="row mt-5 d-flex align-items-stretch">
+            <div class="col-12 col-md-8 d-flex justify-content-center align-items-stretch">
+                    <img src="imagenes/mapa.webp" alt="Mapa de ubicación" class="img-fluid shadow-sm rounded" style="width: 100%; height: 100%; max-height: 500px; object-fit: contain;">
+                </div>
+        
+                <div class="col-12 col-md-4 d-flex justify-content-center align-items-stretch mt-3 mt-md-0">
+                    <div class="accordion w-100 d-flex flex-column justify-content-center" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingNorth">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNorth" aria-expanded="false" aria-controls="collapseNorth">
+                                    Zona Norte
+                                </button>
+                            </h2>
+                            <div id="collapseNorth" class="accordion-collapse collapse" aria-labelledby="headingNorth" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <ul class="list-group">
+                                        <li class="list-group-item">Tigre</li>
+                                        <li class="list-group-item">San Isidro</li>
+                                        <li class="list-group-item">San Fernando</li>
+                                        <li class="list-group-item">Vicente López</li>
+                                        <li class="list-group-item">Escobar</li>
+                                    </ul>
                                 </div>
                             </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingEast">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEast" aria-expanded="false" aria-controls="collapseEast">
-                                        Zona Este
-                                    </button>
-                                </h2>
-                                <div id="collapseEast" class="accordion-collapse collapse" aria-labelledby="headingEast" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <ul class="list-group">
-                                            <li class="list-group-item">Avellaneda</li>
-                                            <li class="list-group-item">Quilmes</li>
-                                            <li class="list-group-item">Berazategui</li>
-                                            <li class="list-group-item">Lomas de Zamora</li>
-                                            <li class="list-group-item">Lanús</li>
-                                        </ul>
-                                    </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingEast">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEast" aria-expanded="false" aria-controls="collapseEast">
+                                    Zona Este
+                                </button>
+                            </h2>
+                            <div id="collapseEast" class="accordion-collapse collapse" aria-labelledby="headingEast" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <ul class="list-group">
+                                        <li class="list-group-item">Avellaneda</li>
+                                        <li class="list-group-item">Quilmes</li>
+                                        <li class="list-group-item">Berazategui</li>
+                                        <li class="list-group-item">Lomas de Zamora</li>
+                                        <li class="list-group-item">Lanús</li>
+                                    </ul>
                                 </div>
                             </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingSouth">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSouth" aria-expanded="false" aria-controls="collapseSouth">
-                                        Zona Sur
-                                    </button>
-                                </h2>
-                                <div id="collapseSouth" class="accordion-collapse collapse" aria-labelledby="headingSouth" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <ul class="list-group">
-                                            <li class="list-group-item">San Vicente</li>
-                                            <li class="list-group-item">Mar del Plata</li>
-                                            <li class="list-group-item">Cañuelas</li>
-                                            <li class="list-group-item">Necochea</li>
-                                        </ul>
-                                    </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingSouth">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSouth" aria-expanded="false" aria-controls="collapseSouth">
+                                    Zona Sur
+                                </button>
+                            </h2>
+                            <div id="collapseSouth" class="accordion-collapse collapse" aria-labelledby="headingSouth" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <ul class="list-group">
+                                        <li class="list-group-item">San Vicente</li>
+                                        <li class="list-group-item">Mar del Plata</li>
+                                        <li class="list-group-item">Cañuelas</li>
+                                        <li class="list-group-item">Necochea</li>
+                                    </ul>
                                 </div>
                             </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingWest">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWest" aria-expanded="false" aria-controls="collapseWest">
-                                        Zona Oeste
-                                    </button>
-                                </h2>
-                                <div id="collapseWest" class="accordion-collapse collapse" aria-labelledby="headingWest" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <ul class="list-group">
-                                            <li class="list-group-item">Morón</li>
-                                            <li class="list-group-item">Merlo</li>
-                                            <li class="list-group-item">Castelar</li>
-                                            <li class="list-group-item">Ituzaingó</li>
-                                        </ul>
-                                    </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingWest">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWest" aria-expanded="false" aria-controls="collapseWest">
+                                    Zona Oeste
+                                </button>
+                            </h2>
+                            <div id="collapseWest" class="accordion-collapse collapse" aria-labelledby="headingWest" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <ul class="list-group">
+                                        <li class="list-group-item">Morón</li>
+                                        <li class="list-group-item">Merlo</li>
+                                        <li class="list-group-item">Castelar</li>
+                                        <li class="list-group-item">Ituzaingó</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
+
 
   <footer class="bg-dark text-white py-5 mt-5">
     <div class="container">
       <div class="row">
+
+
+    <!-- Columna de contacto -->
+    <div class="col-md-4 mb-4">
+      <h5>Contáctanos</h5>
+      <ul class="list-unstyled">
+        <li>
+          <i class="bi bi-phone"></i> 
+          Teléfono: <a href="tel:+541144752880" class="text-white">1144752880</a>
+        </li>
+        <li>
+          <i class="bi bi-envelope"></i> 
+          Correo: <a href="mailto:bombasysevicios@gmail.com" class="text-white">bombasysevicios@gmail.com</a>
+        </li>
         
-        <!-- Columna de contacto -->
-        <div class="col-md-4 mb-4">
-          <h5>Contáctanos</h5>
-          <ul class="list-unstyled">
-            <li>
-              <i class="bi bi-phone"></i> 
-              Teléfono: <a href="tel:+541144752880" class="text-white">1144752880</a>
-            </li>
-            <li>
-              <i class="bi bi-envelope"></i> 
-              Correo: <a href="mailto:bombasysevicios@gmail.com" class="text-white">bombasysevicios@gmail.com</a>
-            </li>
-            
-          </ul>
-        </div>
-        
-        <!-- Columna de servicios -->
-        <div class="col-md-4 mb-4" id="footer">
-          <h5>Conoce nuestros servicios</h5>
-          <p>
-            Tritech, con más de 30 años de experiencia, es líder en reparación y mantenimiento 
-            de bombas. Trabajamos con presurizadoras, sumergibles, centrífugas y más. 
-            Tu tranquilidad es nuestra prioridad.
-          </p>
-        </div>
-        
-        <!-- Columna de métodos de pago -->
-        <div class="col-md-4 text-center">
-          <h5>Aceptamos todos los métodos de pago</h5>
-          <div class="d-flex justify-content-center align-items-center flex-wrap">
-            <i class="fab fa-cc-visa fa-2x mx-2"></i>
-            <i class="fab fa-cc-mastercard fa-2x mx-2"></i>
-            <i class="fab fa-cc-amex fa-2x mx-2"></i>
-            <i class="fab fa-cc-paypal fa-2x mx-2"></i>
-            <i class="fab fa-cc-stripe fa-2x mx-2"></i>
-          </div>
-        </div>
-        
-      </div>
-      <div class="text-center mt-4">
-        <p>&copy; 2024 Tritech. Todos los derechos reservados.</p>
+      </ul>
+    </div>
+    
+    <!-- Columna de servicios -->
+    <div class="col-md-4 mb-4" id="footer">
+      <h5>Conoce nuestros servicios</h5>
+      <p>
+        Tritech, con más de 30 años de experiencia, es líder en reparación y mantenimiento 
+        de bombas. Trabajamos con presurizadoras, sumergibles, centrífugas y más. 
+        Tu tranquilidad es nuestra prioridad.
+      </p>
+    </div>
+    
+    <!-- Columna de métodos de pago -->
+    <div class="col-md-4 text-center">
+      <h5>Aceptamos todos los métodos de pago</h5>
+      <div class="d-flex justify-content-center align-items-center flex-wrap">
+        <i class="fab fa-cc-visa fa-2x mx-2"></i>
+        <i class="fab fa-cc-mastercard fa-2x mx-2"></i>
+        <i class="fab fa-cc-amex fa-2x mx-2"></i>
+        <i class="fab fa-cc-paypal fa-2x mx-2"></i>
+        <i class="fab fa-cc-stripe fa-2x mx-2"></i>
       </div>
     </div>
-  </footer>
-  
-  
     
+  </div>
+  <div class="text-center mt-4">
+    <p>&copy; 2024 Tritech. Todos los derechos reservados.</p>
+  </div>
+</div>
+
+
+  </footer>
 
 </div>
 <div class="whatsapp-button">
@@ -376,6 +339,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>  
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script> <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="log.js"></script>
+
     <!-- Google tag (gtag.js) -->
 
   </body>
