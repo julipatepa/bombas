@@ -1,34 +1,51 @@
+/* Whatsapp flotante */
 .whatsapp-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-  }
-  .footer {
-    background-color: #343a40;
-    color: rgb(92, 23, 23);
-    padding: 20px 0;
-  }
-  .footer a {
-    color: #dcdcdc;
-  }
-  .footer a:hover {
-    color: white;
-  }
-  /* Ajustes personalizados para mejorar la estética */
-.container {
-    max-width: 1200px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
 }
+
+/* Footer */
+.footer {
+  background-color: #343a40;
+  color: rgb(92, 23, 23);
+  
+}
+.footer a {
+  color: #dcdcdc;
+}
+.footer a:hover {
+  color: white;
+}
+
+/* Contenedor general */
+.container {
+  max-width: 1200px;
+}
+
+/* Tipografía y textos */
 h2 {
-    color: #343a40;
-    font-weight: bold;
+  color: #343a40;
+  font-weight: bold;
 }
 p {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
-.shadow-sm {
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.15);
-}
-body {
+
+
+/* Evitar scroll horizontal en toda la página */
+html, body {
+  max-width: 100vw;
   overflow-x: hidden;
 }
+
+/* Fuente manuscrita: Google Fonts “Great Vibes” */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+.cursiva-custom {
+  font-family: 'Great Vibes', cursive;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+
