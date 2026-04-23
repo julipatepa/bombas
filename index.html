@@ -1,0 +1,593 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rowa Bombas | Reparación y Service de Bombas de Agua en AMBA</title>
+
+  <meta name="description" content="Servicio técnico especializado en bombas de agua Rowa. Instalación, reparación y mantenimiento en todo el AMBA. Técnicos certificados. Urgencias en el día." />
+  <meta name="keywords" content="Rowa bombas, servicio técnico Rowa, reparación bombas de agua, instalación bombas, mantenimiento bombas, bombas presurizadoras, bombas sumergibles, bombas centrífugas, técnicos certificados, urgencias bombas AMBA" />
+  <meta name="author" content="Rowa Bombas" />
+  <link rel="icon" href="imagenes/bombas_240x120.webp" type="image/webp" />
+
+  <!-- DNS preconnect -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+
+  <!-- Preload LCP image -->
+  <link rel="preload" as="image"
+        href="imagenes/carrus7_800x450.webp"
+        imagesrcset="imagenes/carrus7_412X232.webp 412w, imagenes/carrus7_640x360.webp 640w, imagenes/carrus7_800x450.webp 800w, imagenes/carrus7_1335x751.webp 1335w"
+        imagesizes="100vw"
+        fetchpriority="high">
+
+ <!-- Bootstrap CSS — no bloqueante -->
+<link rel="preload" as="style"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      onload="this.onload=null;this.rel='stylesheet'">
+<noscript>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</noscript>
+
+  <!-- Estilos propios — solo lo que Bootstrap NO cubre -->
+  <style>
+    html { scroll-behavior: smooth; }
+
+    /* ── Variables de color ── */
+    :root {
+      --verde:     #198754;
+      --verde-osc: #146c43;
+      --gris-bg:   #f5f7f5;
+      --borde:     rgba(0,0,0,.1);
+    }
+
+    body { background: var(--gris-bg); }
+
+    /* ── Navbar ── */
+    .navbar {
+      border-bottom: 3px solid var(--verde);
+    }
+    .navbar-brand img { transition: opacity .15s; }
+    .navbar-brand img:hover { opacity: .85; }
+    .nav-link { transition: color .15s; }
+    .nav-link:hover span { text-decoration: underline; }
+
+    /* ── Hero ── */
+    .hero-wrapper {
+      position: relative;
+      width: 100%;
+      height: clamp(300px, 52vw, 540px);
+      overflow: hidden;
+      background: #0d1f0d;
+    }
+    .hero-wrapper img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: brightness(.55);
+      display: block;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      padding: 0 1.25rem;
+      background: linear-gradient(to bottom, rgba(0,0,0,.1) 0%, rgba(0,0,0,.35) 100%);
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,.15);
+      border: 1px solid rgba(255,255,255,.35);
+      color: #fff;
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: .3rem .85rem;
+      border-radius: 2rem;
+      margin-bottom: .75rem;
+      backdrop-filter: blur(4px);
+    }
+    .hero-overlay h1 {
+      font-weight: 800;
+      font-size: clamp(1.25rem, 4.5vw, 2.25rem);
+      line-height: 1.15;
+      text-shadow: 0 2px 8px rgba(0,0,0,.55);
+      margin-bottom: .5rem;
+    }
+    .hero-overlay p {
+      font-size: clamp(.88rem, 2.5vw, 1.1rem);
+      text-shadow: 0 1px 4px rgba(0,0,0,.45);
+      margin-bottom: 1rem;
+      opacity: .92;
+    }
+    .btn-hero {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: var(--verde);
+      color: #fff;
+      border: none;
+      border-radius: .5rem;
+      padding: .7rem 1.75rem;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      min-height: 48px;
+      box-shadow: 0 4px 14px rgba(25,135,84,.45);
+      transition: background .18s, transform .12s, box-shadow .18s;
+    }
+    .btn-hero:hover {
+      background: var(--verde-osc);
+      color: #fff;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(25,135,84,.5);
+    }
+    .btn-hero:active { transform: translateY(0); }
+
+    /* ── Stats bar ── */
+    .stats-bar {
+      background: #fff;
+      border-bottom: 1px solid var(--borde);
+    }
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem .5rem;
+    }
+    .stat-num {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--verde);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: .78rem;
+      color: #6c757d;
+      text-align: center;
+      margin-top: .2rem;
+    }
+
+    /* ── Cards servicios ── */
+    .service-card {
+      transition: transform .2s, box-shadow .2s;
+      border: none !important;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0,0,0,.12) !important;
+    }
+    .service-img {
+      height: 200px;
+      object-fit: contain;
+      width: 100%;
+      background: #f8f9fa;
+      padding: .75rem;
+    }
+    .service-card .card-body {
+      border-top: 3px solid var(--verde);
+    }
+
+    /* ── Sección nosotros ── */
+    .nosotros-card {
+      background: linear-gradient(135deg, #fff 60%, #f0faf4 100%);
+      border-left: 4px solid var(--verde) !important;
+    }
+
+    /* ── FAQ / Zonas ── */
+    .faq-list, .zone-list {
+      border: 1px solid var(--borde);
+      border-radius: .5rem;
+      overflow: hidden;
+    }
+    .faq-list details, .zone-list details {
+      border-bottom: 1px solid var(--borde);
+    }
+    .faq-list details:last-child, .zone-list details:last-child { border-bottom: none; }
+    .faq-list summary, .zone-list summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.25rem;
+      font-weight: 500;
+      cursor: pointer;
+      list-style: none;
+      background: #fff;
+      transition: background .15s, color .15s;
+      user-select: none;
+    }
+    .faq-list summary::-webkit-details-marker,
+    .zone-list summary::-webkit-details-marker { display: none; }
+    .faq-list summary::after,
+    .zone-list summary::after {
+      content: '+';
+      font-size: 1.3rem;
+      font-weight: 300;
+      color: var(--verde);
+      flex-shrink: 0;
+      margin-left: 1rem;
+      width: 1.4rem;
+      text-align: center;
+    }
+    .faq-list details[open] summary::after,
+    .zone-list details[open] summary::after { content: '−'; }
+    .faq-list summary:hover, .zone-list summary:hover { background: #f0faf4; }
+    .faq-list details[open] summary,
+    .zone-list details[open] summary { background: #f0faf4; color: var(--verde); font-weight: 600; }
+    .faq-body, .zone-body {
+      padding: .85rem 1.25rem 1.1rem;
+      color: #495057;
+      font-size: .97rem;
+      border-top: 1px solid rgba(25,135,84,.12);
+      background: #fff;
+    }
+
+    /* ── WhatsApp flotante ── */
+    .btn-wsp-float {
+      position: fixed;
+      bottom: 1.25rem; right: 1.25rem;
+      z-index: 999;
+      display: block;
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      box-shadow: 0 4px 16px rgba(0,0,0,.25);
+      transition: transform .18s, box-shadow .18s;
+    }
+    .btn-wsp-float:hover {
+      transform: scale(1.08);
+      box-shadow: 0 6px 20px rgba(0,0,0,.3);
+    }
+    .btn-wsp-float img { width: 56px; height: 56px; display: block; border-radius: 50%; }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 3px solid var(--verde);
+    }
+    footer a { color: #adb5bd; transition: color .15s; }
+    footer a:hover { color: #fff; }
+
+    /* ── Secciones ── */
+    .section-title {
+      position: relative;
+      display: inline-block;
+      padding-bottom: .4rem;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      left: 50%; bottom: 0;
+      transform: translateX(-50%);
+      width: 3rem;
+      height: 3px;
+      background: var(--verde);
+      border-radius: 2px;
+    }
+
+    /* ── Evitar FOUC mientras carga Bootstrap ── */
+    .navbar { display: flex; }
+    .collapse:not(.show) { display: none; }
+  </style>
+
+  <!-- Google Tag Manager — async, no bloquea render -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17750306793"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17750306793');
+  </script>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="imagenes/bombas_240x120.webp" alt="Rowa Bombas" width="120" height="60" class="rounded bg-light" onerror="this.style.display='none'">
+    </a>
+
+    <button class="navbar-toggler" type="button"
+        data-bs-toggle="collapse" data-bs-target="#navbar"
+        aria-controls="navbar" aria-expanded="false" aria-label="Abrir menú">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbar">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link fw-semibold" href="#servicios">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="#198754" class="me-1" aria-hidden="true"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/></svg>
+            <span class="text-success">Servicios</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-semibold" href="#nosotros">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="#198754" class="me-1" aria-hidden="true"><path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1zM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5"/></svg>
+            <span class="text-success">Nosotros</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-semibold" href="#faq">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="#0d6efd" class="me-1" aria-hidden="true"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286m1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94"/></svg>
+            <span class="text-primary">Preguntas</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link fw-semibold" href="#contacto">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="#0d6efd" class="me-1" aria-hidden="true"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/></svg>
+            <span class="text-primary">Email</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- WhatsApp flotante -->
+<a href="https://wa.me/541138479551?text=Hola,%20necesito%20asesoramiento%20por%20una%20bomba%20Rowa"
+   id="btn-wsp"
+   class="btn-wsp-float"
+   aria-label="Contactar por WhatsApp">
+  <img src="imagenes/wp.webp"
+       srcset="imagenes/wp.webp 1x, imagenes/wp_2x-120.webp 2x"
+       width="56" height="56" alt="WhatsApp" loading="lazy">
+</a>
+
+<!-- HERO -->
+<div class="hero-wrapper">
+  <img
+    src="imagenes/carrus7_800x450.webp"
+    srcset="imagenes/carrus7_412X232.webp 412w, imagenes/carrus7_640x360.webp 640w, imagenes/carrus7_800x450.webp 800w, imagenes/carrus7_1335x751.webp 1335w"
+    sizes="100vw"
+    fetchpriority="high"
+    loading="eager"
+    decoding="sync"
+    width="800"
+    height="450"
+    alt="Servicio técnico bombas de agua Rowa">
+  <div class="hero-overlay">
+    <span class="hero-badge">✔ Técnicos certificados Rowa</span>
+    <h1>¿Sin presión de agua? Reparamos Bombas Rowa</h1>
+    <p>Técnicos especializados &bull; Atención urgente &bull; Garantía</p>
+    <a href="https://wa.me/541138479551?text=Hola,%20necesito%20asesoramiento%20por%20una%20bomba%20Rowa"
+       id="btn-wsp-hero"
+       class="btn-hero">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+      </svg>
+      Hablar por WhatsApp
+    </a>
+  </div>
+</div>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="container">
+    <div class="row g-0 text-center">
+      <div class="col-3"><div class="stat-item"><span class="stat-num">+10</span><span class="stat-label">años de experiencia</span></div></div>
+      <div class="col-3"><div class="stat-item"><span class="stat-num">24hs</span><span class="stat-label">urgencias AMBA</span></div></div>
+      <div class="col-3"><div class="stat-item"><span class="stat-num">100%</span><span class="stat-label">garantía escrita</span></div></div>
+      <div class="col-3"><div class="stat-item"><span class="stat-num">+20</span><span class="stat-label">zonas cubiertas</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACTO -->
+<div class="container mt-5" id="contacto">
+  <div class="card shadow rounded-4 p-4">
+    <div class="row">
+      <div class="col-md-6 mb-4 mb-md-0 d-flex flex-column justify-content-center">
+        <div class="px-2">
+          <h2 class="fw-bold">Envíanos un mail</h2>
+          <h3 class="fw-bold fs-4">Especialistas en bombas de agua</h3>
+          <p class="mb-2">Instalación, mantenimiento y reparación de bombas centrífugas, sumergibles, presurizadoras, cloacales y más.</p>
+          <p class="mb-2">Atendemos urgencias y brindamos soluciones eficientes para edificios, hogares, industrias y campos.</p>
+          <p class="mb-0">Estamos disponibles en todo el AMBA. Consultanos sin compromiso, ¡estamos para ayudarte!</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <form method="POST" action="contacto.php">
+          <input type="text" name="website" autocomplete="off" class="d-none" tabindex="-1">
+          <div class="mb-3">
+            <label for="email" class="form-label fw-semibold">Tu correo electrónico</label>
+            <input type="email" id="email" name="email" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="asunto" class="form-label fw-semibold">Asunto</label>
+            <input type="text" id="asunto" name="asunto" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label for="mensaje" class="form-label fw-semibold">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="4" class="form-control" required></textarea>
+          </div>
+          <div class="mb-3 form-check">
+            <input class="form-check-input" type="checkbox" id="privacidad" name="privacidad" required>
+            <label class="form-check-label" for="privacidad">Acepto la política de privacidad</label>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" class="me-1" aria-hidden="true"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/></svg>
+            Enviar
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICIOS -->
+<div class="container mt-5" id="servicios">
+  <h2 class="fw-bold text-center mb-4">Servicios Rowa</h2>
+  <div class="row g-4">
+    <div class="col-12 col-md-6">
+      <div class="card shadow-sm h-100 rounded-4">
+        <img src="imagenes/im.webp" loading="lazy" width="600" height="200" class="card-img-top rounded-top-4 service-img" alt="Reparación e instalación bomba Rowa">
+        <div class="card-body text-center">
+          <p class="fw-semibold fs-5 mb-0">Reparación e instalación de bombas Rowa para hogares y edificios.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <div class="card shadow-sm h-100 rounded-4">
+        <img src="imagenes/imagencard.webp" loading="lazy" width="600" height="200" class="card-img-top rounded-top-4 service-img" alt="Service bomba presurizadora Rowa">
+        <div class="card-body text-center">
+          <p class="fw-semibold fs-5 mb-0">Service, reparación e instalación de bombas presurizadoras.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <div class="card shadow-sm h-100 rounded-4">
+        <img src="imagenes/imagencard2.webp" loading="lazy" width="600" height="200" class="card-img-top rounded-top-4 service-img" alt="Bomba elevadora y recirculadora Rowa">
+        <div class="card-body text-center">
+          <p class="fw-semibold fs-5 mb-0">Reparación e instalación de bombas elevadoras y recirculadoras.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <div class="card shadow-sm h-100 rounded-4">
+        <img src="imagenes/card123.webp" loading="lazy" width="600" height="200" class="card-img-top rounded-top-4 service-img" alt="Mantenimiento integral bombas de agua">
+        <div class="card-body text-center">
+          <p class="fw-semibold fs-5 mb-0">Servicio integral en mantenimiento y reparación de cualquier bomba de agua.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NOSOTROS -->
+<div class="container mt-5" id="nosotros">
+  <div class="card shadow rounded-4 p-4">
+    <div class="row">
+      <div class="col-md-6 mb-4 mb-md-0 d-flex align-items-center justify-content-center">
+        <img src="imagenes/nosotross.webp" loading="lazy" width="500" height="300"
+             class="img-fluid rounded shadow"
+             style="max-height:300px; object-fit:cover; width:100%"
+             alt="Equipo técnico Rowa Bombas">
+      </div>
+      <div class="col-md-6 d-flex flex-column justify-content-center">
+        <h2 class="fw-bold">Sobre nosotros</h2>
+        <h3 class="fw-bold fs-4">Soluciones técnicas a medida</h3>
+        <p>Somos especialistas en instalaciones, bombas Rowa y Motorarg, soporte técnico y sistemas eléctricos.</p>
+        <p class="mb-0">Atendemos hogares, empresas, edificios e industrias.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PREGUNTAS FRECUENTES -->
+<div class="container mt-5" id="faq">
+  <div class="card shadow rounded-4 p-4">
+    <h2 class="fw-bold text-center mb-4">Preguntas Frecuentes</h2>
+    <div class="faq-list">
+      <details>
+        <summary>¿Qué hacer si mi bomba no prende?</summary>
+        <div class="faq-body">Revisá el disyuntor, enchufe y presión. Si no arranca, escribinos.</div>
+      </details>
+      <details>
+        <summary>¿Hacen service en Zona Sur?</summary>
+        <div class="faq-body">Sí, cubrimos Lanús, Lomas, Quilmes, Avellaneda, Banfield y más.</div>
+      </details>
+      <details>
+        <summary>¿Cuánto cuesta el service?</summary>
+        <div class="faq-body">Depende del problema. Mandanos los detalles y te cotizamos.</div>
+      </details>
+      <details>
+        <summary>¿Reparan presurizadoras Rowa y otras marcas?</summary>
+        <div class="faq-body">Sí, Rowa, Grundfos, Blauberg, Peabody, Beltram, Motorarg y más.</div>
+      </details>
+      <details>
+        <summary>¿Hacen instalaciones nuevas?</summary>
+        <div class="faq-body">Instalamos bombas nuevas, tableros, presurizadores y sistemas completos.</div>
+      </details>
+      <details>
+        <summary>¿Dan garantía?</summary>
+        <div class="faq-body">Sí, todas nuestras reparaciones tienen garantía escrita.</div>
+      </details>
+      <details>
+        <summary>¿Atienden urgencias?</summary>
+        <div class="faq-body">Sí, urgencias en el día en AMBA.</div>
+      </details>
+      <details>
+        <summary>¿Reparan tableros o presostatos?</summary>
+        <div class="faq-body">Sí, arreglamos tableros, presostatos, flotantes, sensores y más.</div>
+      </details>
+    </div>
+  </div>
+</div>
+
+<!-- COBERTURA -->
+<div class="container mt-5 mb-5" id="cobertura">
+  <div class="card shadow rounded-4 p-4">
+    <h2 class="fw-bold text-center mb-4">Cobertura en AMBA y Gran Buenos Aires</h2>
+    <div class="zone-list">
+      <details>
+        <summary>Zona Norte</summary>
+        <div class="zone-body">Tigre, San Isidro, Vicente López, Pilar, Escobar, San Fernando.</div>
+      </details>
+      <details>
+        <summary>Zona Oeste</summary>
+        <div class="zone-body">Morón, Ituzaingó, Merlo, Moreno, Hurlingham, La Matanza.</div>
+      </details>
+      <details>
+        <summary>Zona Sur</summary>
+        <div class="zone-body">Lanús, Quilmes, Lomas, Banfield, Avellaneda, Berazategui.</div>
+      </details>
+      <details>
+        <summary>Zona Este</summary>
+        <div class="zone-body">Avellaneda, Berazategui, Hudson, Wilde, Sarandí, Bernal.</div>
+      </details>
+      <details>
+        <summary>CABA</summary>
+        <div class="zone-body">Palermo, Recoleta, Caballito, Almagro, Belgrano, Núñez, Flores, Villa Crespo, Devoto y más.</div>
+      </details>
+      <details>
+        <summary>La Plata y alrededores</summary>
+        <div class="zone-body">La Plata, City Bell, Ensenada, Berisso.</div>
+      </details>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="bg-dark text-white py-4">
+  <div class="container text-center">
+    <p class="fw-bold fs-5 mb-1">Rowa Bombas</p>
+    <p class="mb-1">Especialistas en instalación, reparación y mantenimiento de bombas de agua.</p>
+    <p class="mb-1">© 2025 Rowa Bombas. Todos los derechos reservados.</p>
+    <p class="mb-0">📞 11 3847-9551</p>
+  </div>
+</footer>
+
+<!-- Bootstrap JS sin Popper (solo Collapse/Navbar) — ~16 KiB vs 52 KiB del bundle completo -->
+<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+
+<!-- Conversión WhatsApp — defer, no bloquea -->
+<script defer>
+document.addEventListener("DOMContentLoaded", function () {
+  function trackWsp(id, value) {
+    var el = document.getElementById(id);
+    if (!el) return;
+    el.addEventListener("click", function () {
+      gtag("event", "conversion", {
+        send_to: "AW-17750306793/K4GoCL7EqI4cEOnfgJBC",
+        value: value,
+        currency: "ARS"
+      });
+    });
+  }
+  trackWsp("btn-wsp", 1);
+  trackWsp("btn-wsp-hero", 2);
+});
+</script>
+
+</body>
+</html>
