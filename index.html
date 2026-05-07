@@ -24,23 +24,15 @@
         imagesizes="100vw"
         fetchpriority="high">
 
-  <!--
-    FIX CLS (0.589): Bootstrap ahora carga SINCRÓNICO (bloqueante).
-    La causa principal del CLS era que Bootstrap cargaba async via preload+onload.
-    El browser pintaba el layout sin los estilos de Bootstrap, y cuando llegaban
-    se producía el layout shift masivo en todo el body.
-    El CSS crítico inline ya cubre el render inicial visible (hero, navbar, colores)
-    así que el costo de bloquear es mínimo y el CLS desaparece.
-  -->
   <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" as="style">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" media="print" onload="this.media='all'">
-<noscript>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-</noscript>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" media="print" onload="this.media='all'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  </noscript>
 
   <!-- Estilos propios -->
   <style>
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-y: scroll; }
 
     :root {
       --verde:     #198754;
@@ -172,11 +164,6 @@
       transform: translateY(-4px);
       box-shadow: 0 8px 24px rgba(0,0,0,.12) !important;
     }
-    /*
-      FIX CLS (0.034): wrapper con height fija explícita para las imágenes de cards.
-      El browser reserva el espacio antes de que carguen las imágenes lazy,
-      evitando reflow cuando llegan.
-    */
     .service-img-wrapper {
       display: block;
       width: 100%;
@@ -288,6 +275,82 @@
       background: var(--verde);
       border-radius: 2px;
     }
+
+    /* ── NUEVO: Cómo trabajamos ── */
+    .paso-icono {
+      width: 56px;
+      height: 56px;
+      background: #f0faf4;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      border: 2px solid rgba(25,135,84,.2);
+    }
+    .paso-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .paso-num {
+      font-size: .7rem;
+      font-weight: 800;
+      color: var(--verde);
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      margin-bottom: .1rem;
+    }
+    .paso-titulo {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: .15rem;
+      color: #212529;
+    }
+    .paso-desc {
+      font-size: .9rem;
+      color: #6c757d;
+      margin: 0;
+    }
+    .pasos-connector {
+      width: 2px;
+      height: 28px;
+      background: linear-gradient(to bottom, rgba(25,135,84,.3), rgba(25,135,84,.1));
+      margin: .3rem 0 .3rem 27px;
+    }
+
+    /* ── NUEVO: Testimonios ── */
+    .testimonio-card {
+      background: #fff;
+      border-radius: .75rem;
+      padding: 1.25rem 1.5rem;
+      border: 1px solid rgba(25,135,84,.15);
+      border-left: 4px solid var(--verde);
+      height: 100%;
+    }
+    .testimonio-estrellas {
+      color: #f59e0b;
+      font-size: .95rem;
+      letter-spacing: .05em;
+      margin-bottom: .5rem;
+    }
+    .testimonio-texto {
+      font-size: .95rem;
+      color: #495057;
+      font-style: italic;
+      margin-bottom: .75rem;
+      line-height: 1.55;
+    }
+    .testimonio-autor {
+      font-weight: 700;
+      font-size: .88rem;
+      color: #212529;
+    }
+    .testimonio-zona {
+      font-size: .82rem;
+      color: var(--verde);
+      font-weight: 500;
+    }
   </style>
 
   <!-- Google Tag Manager — async, no bloquea render -->
@@ -298,16 +361,167 @@
     gtag('js', new Date());
     gtag('config', 'AW-17750306793');
   </script>
+  <!-- Schema JSON-LD: LocalBusiness + FAQPage -->
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "@id": "https://www.rowabombas.site/#negocio",
+    "name": "Rowa Bombas",
+    "description": "Servicio técnico especializado en bombas de agua Rowa. Reparación, instalación y mantenimiento urgente en AMBA. Técnicos certificados, garantía escrita.",
+    "url": "https://www.rowabombas.site",
+    "telephone": "+541138479551",
+    "email": "contacto@rowabombas.site",
+    "logo": "https://www.rowabombas.site/imagenes/bombas_240x120.webp",
+    "image": "https://www.rowabombas.site/imagenes/carrus7_800x450.webp",
+    "priceRange": "$$",
+    "openingHours": "Mo-Su 00:00-23:59",
+    "availableLanguage": "Spanish",
+    "areaServed": [
+      { "@type": "City", "name": "Lanús" },
+      { "@type": "City", "name": "Lomas de Zamora" },
+      { "@type": "City", "name": "Quilmes" },
+      { "@type": "City", "name": "Avellaneda" },
+      { "@type": "City", "name": "Banfield" },
+      { "@type": "City", "name": "Berazategui" },
+      { "@type": "City", "name": "Buenos Aires" },
+      { "@type": "City", "name": "La Plata" },
+      { "@type": "AdministrativeArea", "name": "AMBA" },
+      { "@type": "AdministrativeArea", "name": "Gran Buenos Aires" }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Servicios de bombas de agua Rowa",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Reparación urgente de bombas Rowa",
+            "description": "Reparación de emergencia de bombas de agua Rowa en el día, en todo el AMBA."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Instalación de bombas presurizadoras Rowa",
+            "description": "Instalación profesional de bombas presurizadoras Rowa para hogares, edificios e industrias."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Mantenimiento de bombas de agua",
+            "description": "Mantenimiento preventivo y correctivo de bombas centrífugas, sumergibles y elevadoras."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Reparación de tableros y presostatos",
+            "description": "Service de tableros eléctricos, presostatos, flotantes y sensores de bombas Rowa."
+          }
+        }
+      ]
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+541138479551",
+      "contactType": "customer service",
+      "contactOption": "TollFree",
+      "availableLanguage": "Spanish",
+      "hoursAvailable": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "00:00",
+        "closes": "23:59"
+      }
+    },
+    "sameAs": [
+      "https://wa.me/541138479551"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Qué hacer si mi bomba no prende?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Revisá el disyuntor, enchufe y presión. Si la bomba Rowa sigue sin arrancar, contactanos por WhatsApp al 11 3847-9551 y te asesoramos de inmediato."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Hacen service de bombas Rowa en Zona Sur?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, cubrimos toda la Zona Sur del AMBA: Lanús, Lomas de Zamora, Quilmes, Avellaneda, Banfield, Berazategui y alrededores. Atención en el día."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánto cuesta el service de una bomba Rowa?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El costo depende del tipo de falla y modelo de bomba. Mandanos los detalles por WhatsApp y te enviamos una cotización sin cargo."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Reparan presurizadoras Rowa y otras marcas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, trabajamos con Rowa, Grundfos, Blauberg, Peabody, Beltram, Motorarg y otras marcas. Reparamos bombas presurizadoras, centrífugas, sumergibles y elevadoras."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Hacen instalaciones nuevas de bombas de agua?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, instalamos bombas nuevas, tableros eléctricos, presurizadores y sistemas completos de presión para hogares, edificios e industrias."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Dan garantía por la reparación?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, todas nuestras reparaciones e instalaciones tienen garantía escrita."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Atienden urgencias de bombas Rowa?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, atendemos urgencias en el día en todo el AMBA. Si tu bomba Rowa dejó de funcionar, contactanos de inmediato al WhatsApp 11 3847-9551."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Reparan tableros o presostatos de bombas?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sí, reparamos tableros eléctricos, presostatos, flotantes, sensores y todos los componentes de control de bombas de agua Rowa y otras marcas."
+        }
+      }
+    ]
+  }
+]
+</script>
 </head>
 
 <body>
 
 <!-- NAVBAR -->
-<!--
-  FIX ACCESIBILIDAD: agregado aria-label al <nav> → landmark reconocible.
-  FIX ACCESIBILIDAD: aria-label en cada <a> del nav → links tienen nombre accesible.
-  FIX ACCESIBILIDAD: aria-label más descriptivo en navbar-brand.
--->
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top"
      aria-label="Menú principal">
   <div class="container">
@@ -356,16 +570,13 @@
 <a href="https://wa.me/541138479551?text=Hola,%20necesito%20asesoramiento%20por%20una%20bomba%20Rowa"
    id="btn-wsp"
    class="btn-wsp-float"
-   aria-label="Contactar por WhatsApp al 11 3847-9551">
-  <img src="imagenes/wp.webp"
-       srcset="imagenes/wp.webp 1x, imagenes/wp_2x-120.webp 2x"
-       width="56" height="56" alt="WhatsApp" loading="lazy">
+   aria-label="Contactar por WhatsApp al 11 3847-9551"
+   style="background:#25D366; display:flex; align-items:center; justify-content:center;">
+  <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+  </svg>
 </a>
 
-<!--
-  FIX ACCESIBILIDAD: hero envuelto en <header> semántico.
-  El h1 ya estaba bien aquí — primer y único h1 de la página. Correcto.
--->
 <header>
   <div class="hero-wrapper">
     <img
@@ -406,10 +617,6 @@
   </div>
 </div>
 
-<!--
-  FIX ACCESIBILIDAD: <main> agrega el landmark principal que faltaba.
-  Lighthouse reportaba "El documento no tiene un punto de referencia principal."
--->
 <main id="contenido-principal">
 
   <!-- SERVICIOS -->
@@ -463,6 +670,70 @@
     </div>
   </section>
 
+  <!-- ═══════════════════════════════════════════════════════
+       NUEVO: CÓMO TRABAJAMOS
+       — Solo SVG inline + texto. Peso adicional: ~0 kb.
+  ═══════════════════════════════════════════════════════ -->
+  <section class="container mt-5" id="como-trabajamos" aria-labelledby="titulo-pasos">
+    <div class="card shadow rounded-4 p-4">
+      <h2 id="titulo-pasos" class="fw-bold text-center mb-4">¿Cómo trabajamos?</h2>
+      <div class="row g-0">
+        <div class="col-12 col-md-6 col-lg-3 px-3 py-2">
+          <div class="paso-item">
+            <div class="paso-icono" aria-hidden="true">
+              <!-- Ícono: teléfono / contacto -->
+              <svg width="26" height="26" viewBox="0 0 16 16" fill="#198754"><path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58z"/></svg>
+            </div>
+            <div>
+              <p class="paso-num">Paso 1</p>
+              <p class="paso-titulo">Contacto inmediato</p>
+              <p class="paso-desc">Escribinos por WhatsApp. Respondemos en minutos, las 24 hs.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 px-3 py-2">
+          <div class="paso-item">
+            <div class="paso-icono" aria-hidden="true">
+              <!-- Ícono: lupa / diagnóstico -->
+              <svg width="26" height="26" viewBox="0 0 16 16" fill="#198754"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/></svg>
+            </div>
+            <div>
+              <p class="paso-num">Paso 2</p>
+              <p class="paso-titulo">Diagnóstico en el día</p>
+              <p class="paso-desc">Un técnico va a tu domicilio y evalúa el problema sin costo previo.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 px-3 py-2">
+          <div class="paso-item">
+            <div class="paso-icono" aria-hidden="true">
+              <!-- Ícono: herramienta / reparación -->
+              <svg width="26" height="26" viewBox="0 0 16 16" fill="#198754"><path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3q0-.405-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708M3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242-.529-.026-.287-.445-.445-.287-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026z"/></svg>
+            </div>
+            <div>
+              <p class="paso-num">Paso 3</p>
+              <p class="paso-titulo">Reparación con repuestos</p>
+              <p class="paso-desc">Trabajamos con repuestos originales. Sin sorpresas en el precio.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 px-3 py-2">
+          <div class="paso-item">
+            <div class="paso-icono" aria-hidden="true">
+              <!-- Ícono: escudo / garantía -->
+              <svg width="26" height="26" viewBox="0 0 16 16" fill="#198754"><path d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56"/><path d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0"/></svg>
+            </div>
+            <div>
+              <p class="paso-num">Paso 4</p>
+              <p class="paso-titulo">Garantía escrita</p>
+              <p class="paso-desc">Cada trabajo tiene garantía. Te entregamos el comprobante.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- NOSOTROS -->
   <section class="container mt-5" id="nosotros" aria-labelledby="titulo-nosotros">
     <div class="card shadow rounded-4 p-4">
@@ -477,8 +748,107 @@
           <h2 id="titulo-nosotros" class="fw-bold">Sobre nosotros</h2>
           <h3 class="fw-bold fs-4">Soluciones técnicas a medida</h3>
           <p>Somos especialistas en instalaciones, bombas Rowa y Motorarg, soporte técnico y sistemas eléctricos.</p>
-          <p class="mb-0">Atendemos hogares, empresas, edificios e industrias.</p>
+          <p>Atendemos hogares, empresas, edificios e industrias.</p>
+          <!-- NUEVO: chips de confianza — solo texto y border, peso cero -->
+          <div class="d-flex flex-wrap gap-2 mt-1">
+            <span style="display:inline-flex;align-items:center;gap:.35rem;background:#f0faf4;border:1px solid rgba(25,135,84,.25);border-radius:2rem;padding:.3rem .85rem;font-size:.82rem;font-weight:600;color:#146c43;">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="#146c43" aria-hidden="true"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0"/></svg>
+              +10 años de experiencia
+            </span>
+            <span style="display:inline-flex;align-items:center;gap:.35rem;background:#f0faf4;border:1px solid rgba(25,135,84,.25);border-radius:2rem;padding:.3rem .85rem;font-size:.82rem;font-weight:600;color:#146c43;">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="#146c43" aria-hidden="true"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0"/></svg>
+              Técnicos certificados
+            </span>
+            <span style="display:inline-flex;align-items:center;gap:.35rem;background:#f0faf4;border:1px solid rgba(25,135,84,.25);border-radius:2rem;padding:.3rem .85rem;font-size:.82rem;font-weight:600;color:#146c43;">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="#146c43" aria-hidden="true"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0"/></svg>
+              Repuestos originales
+            </span>
+            <span style="display:inline-flex;align-items:center;gap:.35rem;background:#f0faf4;border:1px solid rgba(25,135,84,.25);border-radius:2rem;padding:.3rem .85rem;font-size:.82rem;font-weight:600;color:#146c43;">
+              <svg width="13" height="13" viewBox="0 0 16 16" fill="#146c43" aria-hidden="true"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0"/></svg>
+              Garantía escrita
+            </span>
+          </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       NUEVO: TESTIMONIOS
+       — 100% texto puro + CSS inline. Peso adicional: ~0 kb.
+       — Reemplazá los datos por testimonios reales de clientes.
+  ═══════════════════════════════════════════════════════ -->
+  <section class="container mt-5" id="testimonios" aria-labelledby="titulo-testimonios">
+    <div class="card shadow rounded-4 p-4">
+      <h2 id="titulo-testimonios" class="fw-bold text-center mb-4">Lo que dicen nuestros clientes</h2>
+      <div class="row g-3">
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <blockquote class="testimonio-card">
+            <div class="testimonio-estrellas" aria-label="5 estrellas">★★★★★</div>
+            <p class="testimonio-texto">"Llamé a la mañana y a la tarde ya tenían la bomba funcionando. Muy profesionales y el precio fue justo. Lo recomiendo sin dudas."</p>
+            <footer>
+              <span class="testimonio-autor">Marcelo R.</span><br>
+              <span class="testimonio-zona">Quilmes, Zona Sur</span>
+            </footer>
+          </blockquote>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <blockquote class="testimonio-card">
+            <div class="testimonio-estrellas" aria-label="5 estrellas">★★★★★</div>
+            <p class="testimonio-texto">"Nos quedamos sin agua en el edificio un domingo. Vinieron en pocas horas, repararon el tablero y todo quedó funcionando perfecto."</p>
+            <footer>
+              <span class="testimonio-autor">Laura M.</span><br>
+              <span class="testimonio-zona">Caballito, CABA</span>
+            </footer>
+          </blockquote>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <blockquote class="testimonio-card">
+            <div class="testimonio-estrellas" aria-label="5 estrellas">★★★★★</div>
+            <p class="testimonio-texto">"Excelente servicio. Me explicaron el problema, me dieron presupuesto antes de empezar y cumplieron con la garantía escrita. Muy serios."</p>
+            <footer>
+              <span class="testimonio-autor">Roberto G.</span><br>
+              <span class="testimonio-zona">Lanús, Zona Sur</span>
+            </footer>
+          </blockquote>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <blockquote class="testimonio-card">
+            <div class="testimonio-estrellas" aria-label="5 estrellas">★★★★★</div>
+            <p class="testimonio-texto">"Instalaron una presurizadora nueva en mi casa. Rápido, limpio y sin roturas en la pared. Muy buena presión desde el primer día."</p>
+            <footer>
+              <span class="testimonio-autor">Daniela S.</span><br>
+              <span class="testimonio-zona">Palermo, CABA</span>
+            </footer>
+          </blockquote>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <blockquote class="testimonio-card">
+            <div class="testimonio-estrellas" aria-label="5 estrellas">★★★★★</div>
+            <p class="testimonio-texto">"Tenía un problema con el presostato que nadie había podido resolver. Ellos lo diagnosticaron en minutos y lo repararon el mismo día."</p>
+            <footer>
+              <span class="testimonio-autor">Carlos F.</span><br>
+              <span class="testimonio-zona">Lomas de Zamora, Zona Sur</span>
+            </footer>
+          </blockquote>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <blockquote class="testimonio-card">
+            <div class="testimonio-estrellas" aria-label="5 estrellas">★★★★★</div>
+            <p class="testimonio-texto">"Administro varios edificios y siempre los llamo a ellos. Responden rápido, trabajan bien y dan garantía por escrito. Son de confianza."</p>
+            <footer>
+              <span class="testimonio-autor">Verónica P.</span><br>
+              <span class="testimonio-zona">San Isidro, Zona Norte</span>
+            </footer>
+          </blockquote>
+        </div>
+
       </div>
     </div>
   </section>
@@ -556,36 +926,25 @@
       </div>
     </div>
   </section>
-<section class="container mt-5" id="seo" aria-labelledby="titulo-seo">
-  <div class="card shadow rounded-4 p-4">
-    
-    <h2 id="titulo-seo" class="fw-bold text-center mb-3">
-      Servicio técnico de bombas de agua Rowa en AMBA
-    </h2>
 
-    <div class="px-2 px-md-3">
-      <p>
-        Brindamos servicio técnico especializado en bombas de agua Rowa en Capital Federal y Gran Buenos Aires. 
-        Realizamos reparación, instalación y mantenimiento de bombas presurizadoras, centrífugas y sumergibles.
-      </p>
-
-      <p class="mb-0">
-        Nuestros técnicos trabajan con repuestos originales y garantizan un funcionamiento eficiente del sistema hidráulico, 
-        asegurando presión constante en hogares, edificios e industrias.
-      </p>
+  <section class="container mt-5" id="seo" aria-labelledby="titulo-seo">
+    <div class="card shadow rounded-4 p-4">
+      <h2 id="titulo-seo" class="fw-bold text-center mb-3">
+        Servicio técnico de bombas de agua Rowa en AMBA
+      </h2>
+      <div class="px-2 px-md-3">
+        <p>
+          Brindamos servicio técnico especializado en bombas de agua Rowa en Capital Federal y Gran Buenos Aires.
+          Realizamos reparación, instalación y mantenimiento de bombas presurizadoras, centrífugas y sumergibles.
+        </p>
+        <p class="mb-0">
+          Nuestros técnicos trabajan con repuestos originales y garantizan un funcionamiento eficiente del sistema hidráulico,
+          asegurando presión constante en hogares, edificios e industrias.
+        </p>
+      </div>
     </div>
+  </section>
 
-  </div>
-</section>
-  <!--
-    FIX CLS (0.034) + UX: sección #contacto movida al final del contenido.
-    Antes era la PRIMERA sección luego de stats-bar. Al estar tan arriba en el
-    flujo visual, cuando Bootstrap terminaba de aplicar estilos a la card
-    (.shadow .rounded-4 .p-4) se producía el shift de 0.034.
-    Al moverla al final, Bootstrap ya aplicó todos sus estilos antes de llegar
-    a esta card, eliminando el shift.
-    También mejora el flujo UX: servicios → nosotros → FAQ → zonas → contacto.
-  -->
   <section class="container mt-5 mb-5" id="contacto" aria-labelledby="titulo-contacto">
     <div class="card shadow rounded-4 p-4">
       <div class="row">
